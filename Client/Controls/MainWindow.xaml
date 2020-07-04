@@ -305,7 +305,7 @@
                                    KeyUp="taskText_PreviewKeyUp" 
                                    TaskList="{Binding TaskList}"
                                    CaseSensitive="{Binding Source={x:Static local:User.Default}, Path=IntellisenseCaseSensitive}" />
-        <ListBox Grid.Row="2" ItemsSource="{Binding Tasks}" IsSynchronizedWithCurrentItem="True" SelectedItem="{Binding SelectedItem}" Name="lbTasks" Margin="0,10,0,0" SelectedIndex="0" IsTextSearchEnabled="False" AlternationCount="2" BorderBrush="{x:Null}" SelectionMode="Extended" Style="{StaticResource WordWrapEnabledListBox}">
+        <ListBox Grid.Row="2" ItemsSource="{Binding Tasks}" IsSynchronizedWithCurrentItem="True" SelectedItem="{Binding SelectedItem}" Name="lbTasks" Margin="0,10,0,0" SelectedIndex="0" IsTextSearchEnabled="False" AlternationCount="2" BorderBrush="#FF273136" SelectionMode="Extended" Style="{StaticResource WordWrapEnabledListBox}" Background="#FF273136" Foreground="#FFF32410">
             <ListBox.CommandBindings>
                 <CommandBinding Command="ApplicationCommands.Copy" CanExecute="WhenTasksSelectedCanExecute" Executed="CopyTasksExecuted" />
                 <CommandBinding Command="ApplicationCommands.Paste" CanExecute="PasteTasksIntoTaskListCanExecute" Executed="PasteTasksIntoTaskListExecuted" />
@@ -380,13 +380,13 @@
             </ListBox.InputBindings>
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel>
-                        <TextBlock local:UrlService.Text="{Binding Raw}" Style="{StaticResource WordWrapEnabledTextBlock}">
+                    <StackPanel Background="#FF6BEA22" Width="1000">
+                        <TextBlock Text="Test" local:UrlService.Text="{Binding Raw}" Style="{StaticResource WordWrapEnabledTextBlock}" Background="#FF273136" Foreground="#FFF2FFFC">
                             <TextBlock.InputBindings>
                                 <MouseBinding Gesture="LeftDoubleClick" Command="{StaticResource UpdateTask}" />
                             </TextBlock.InputBindings>
                         </TextBlock>
-                    </StackPanel>
+                    </StackPanel >
                 </DataTemplate>
             </ListBox.ItemTemplate>
             <ListBox.GroupStyle>
