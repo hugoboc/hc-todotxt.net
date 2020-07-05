@@ -207,14 +207,14 @@
         <KeyBinding Command="{StaticResource SortByFileOrder}" Key="D0" Modifiers="Control"/>
         <KeyBinding Command="{StaticResource SortByFileOrder}" Key="NumPad0" Modifiers="Control"/>
     </Window.InputBindings>
-    <Grid Name="stackPanel1" Margin="0,0,0,0" ShowGridLines="False" >
+    <Grid Name="stackPanel1" Margin="0,0,0,0" ShowGridLines="False" Background="#FF273136" >
         <Grid.RowDefinitions>
             <RowDefinition Height="25"></RowDefinition>
             <RowDefinition Height="25"></RowDefinition>
             <RowDefinition Height="*" ></RowDefinition>
             <RowDefinition Height="23"></RowDefinition>
         </Grid.RowDefinitions>
-        <Menu Grid.Row="0" Height="23" Name="menu1" VerticalAlignment="Top" IsMainMenu="True" KeyboardNavigation.TabNavigation="None">
+        <Menu Grid.Row="0" Height="23" Name="menu1" VerticalAlignment="Top" IsMainMenu="True" KeyboardNavigation.TabNavigation="None" Background="#FF1D2528" Foreground="#A5F2FFFC">
             <MenuItem Header="_File">
                 <MenuItem Header="_New" Command="{StaticResource NewFile}" InputGestureText="Ctrl+N"/>
                 <MenuItem Header="_Open" Command="{StaticResource OpenFile}" InputGestureText="Ctrl+O"/>
@@ -294,18 +294,20 @@
                 <MenuItem Header="_Show Calendar" Command="{StaticResource ShowCalendar}" InputGestureText="Right Shift" />
             </MenuItem>
             <MenuItem Name="UpdateMenu" Header="*Update available*" Visibility="Hidden" Click="GetUpdate" />
-            <Menu.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#f8f8f8" Offset="0" />
-                    <GradientStop Color="#f0f0f0" Offset="1" />
-                </LinearGradientBrush>
-            </Menu.Background>
         </Menu>
         <local:IntellisenseTextBox Grid.Row="1" Height="23" Margin="0,0,0,0" x:Name="taskText" AcceptsReturn="False" Cursor="IBeam" VerticalAlignment="Top"
                                    KeyUp="taskText_PreviewKeyUp" 
                                    TaskList="{Binding TaskList}"
-                                   CaseSensitive="{Binding Source={x:Static local:User.Default}, Path=IntellisenseCaseSensitive}" />
+                                   CaseSensitive="{Binding Source={x:Static local:User.Default}, Path=IntellisenseCaseSensitive}" Background="#FF273136" Foreground="#FFF2FFFC"/>
         <ListBox Grid.Row="2" ItemsSource="{Binding Tasks}" IsSynchronizedWithCurrentItem="True" SelectedItem="{Binding SelectedItem}" Name="lbTasks" Margin="0,10,0,0" SelectedIndex="0" IsTextSearchEnabled="False" AlternationCount="2" BorderBrush="#FF273136" SelectionMode="Extended" Style="{StaticResource WordWrapEnabledListBox}" Background="#FF273136" Foreground="#FFF32410">
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <!--This remove the border around the listbox-->
+                    <Setter Property="BorderThickness" Value="0"/>
+                </Style>
+            </ListBox.ItemContainerStyle>
+            <!-- Stretch text to complete width -->
+            <!--<ListBox.HorizontalContentAlignment>Stretch</ListBox.HorizontalContentAlignment>-->
             <ListBox.CommandBindings>
                 <CommandBinding Command="ApplicationCommands.Copy" CanExecute="WhenTasksSelectedCanExecute" Executed="CopyTasksExecuted" />
                 <CommandBinding Command="ApplicationCommands.Paste" CanExecute="PasteTasksIntoTaskListCanExecute" Executed="PasteTasksIntoTaskListExecuted" />
@@ -380,8 +382,8 @@
             </ListBox.InputBindings>
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Background="#FF6BEA22" Width="1000">
-                        <TextBlock Text="Test" local:UrlService.Text="{Binding Raw}" Style="{StaticResource WordWrapEnabledTextBlock}" Background="#FF273136" Foreground="#FFF2FFFC">
+                    <StackPanel Background="#FF6BEA22">
+                        <TextBlock local:UrlService.Text="{Binding Raw}" Style="{StaticResource WordWrapEnabledTextBlock}" Background="#FF273136" Foreground="#FFF2FFFC">
                             <TextBlock.InputBindings>
                                 <MouseBinding Gesture="LeftDoubleClick" Command="{StaticResource UpdateTask}" />
                             </TextBlock.InputBindings>
@@ -401,10 +403,10 @@
                                                 <RowDefinition/>
                                                 <RowDefinition/>
                                             </Grid.RowDefinitions>
-                                            <TextBlock Grid.Row="0" local:UrlService.Text="{Binding Name}" Margin="0,10,0,3" FontWeight="Bold"/>
+                                            <TextBlock Grid.Row="0" local:UrlService.Text="{Binding Name}" Margin="0,10,0,3" FontWeight="Bold" Foreground="#FFDCED72"/>
                                             <ItemsPresenter Grid.Row="1"/>
                                         </Grid>
-                                        </ControlTemplate>
+                                    </ControlTemplate>
                                 </Setter.Value>
                             </Setter>
                         </Style>
@@ -412,12 +414,12 @@
                 </GroupStyle>
             </ListBox.GroupStyle>
         </ListBox>
-        
+
         <WebBrowser Grid.Row="2" Height="Auto" HorizontalAlignment="Stretch" Margin="0,0,0,0" Name="webBrowser1" VerticalAlignment="Stretch" Width="Auto" Visibility="Hidden" Grid.ColumnSpan="2" />
         <Button Grid.Row="0" Grid.RowSpan="2" Content="Print" Height="23" HorizontalAlignment="Left" Margin="0,23,207,0" Name="btnPrint" VerticalAlignment="Top" Width="92" Visibility="Hidden" Click="btnPrint_Click" />
         <Button Grid.Row="0" Grid.RowSpan="2"  Content="Cancel" Height="23" HorizontalAlignment="Left" Margin="97,23,0,0" Name="btnCancelPrint" VerticalAlignment="Top" Width="92" Visibility="Hidden" Click="btnCancelPrint_Click" />
         <!-- Status bar inspired by TodoTxtMac  -->
-        <StatusBar Grid.Row="3" Name="sbTaskSummary">
+        <StatusBar Grid.Row="3" Name="sbTaskSummary" Background="#FF1D2528" Foreground="#A5F2FFFC">
             <TextBlock Name="lblFilterStatus" Text="{Binding ActiveFilterNumber, Mode=OneWay, Converter= {StaticResource filterToStatusConv}}" VerticalAlignment="Bottom"></TextBlock>
             <Separator></Separator>
             <TextBlock Text="Sort:"/>
