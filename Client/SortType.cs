@@ -16,6 +16,7 @@ namespace Client
         [Description("Order in file")]
         None,
         [Description("Creation Date")]
-        Created
+        Created,
+        Threshold
     }
 }

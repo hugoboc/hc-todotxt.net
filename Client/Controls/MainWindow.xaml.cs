@@ -453,6 +453,11 @@ namespace Client
             ViewModel.SortList(SortType.DueDate);
         }
 
+        private void SortByThresholdExecuted(object sender, RoutedEventArgs e)
+        {
+            ViewModel.SortList(SortType.Threshold);
+        }
+
         private void SortByProjectExecuted(object sender, RoutedEventArgs e)
         {
             ViewModel.SortList(SortType.Project);

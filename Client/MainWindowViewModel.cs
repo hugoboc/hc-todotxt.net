@@ -387,6 +387,9 @@ namespace Client
                     case SortType.Created:
                         sortProperty = "CreationDate";
                         break;
+                    case SortType.Threshold:
+                        sortProperty = "ThresholdDate";
+                        break;
                 }
 
                 _myView = (CollectionView)CollectionViewSource.GetDefaultView(sortedTaskList);
@@ -845,6 +848,14 @@ namespace Client
                     return tasks.OrderBy(t => (string.IsNullOrEmpty(t.DueDate) ? "9999-99-99" : t.DueDate))
                         .ThenBy(t => t.Completed)
                         .ThenBy(t => (string.IsNullOrEmpty(t.Priority) ? "(zzz)" : t.Priority))
+                        .ThenBy(t => (string.IsNullOrEmpty(t.CreationDate) ? "0000-00-00" : t.CreationDate));
+
+                case SortType.Threshold:
+                    _window.SetSelectedMenuItem(_window.sortMenu, "Threshold");
+                    return tasks.OrderBy(t => (string.IsNullOrEmpty(t.ThresholdDate) ? "9999-99-99" : t.ThresholdDate))
+                        .ThenBy(t => t.Completed)
+                        .ThenBy(t => (string.IsNullOrEmpty(t.Priority) ? "(zzz)" : t.Priority))
+                        .ThenBy(t => (string.IsNullOrEmpty(t.DueDate) ? "9999-99-99" : t.DueDate))
                         .ThenBy(t => (string.IsNullOrEmpty(t.CreationDate) ? "0000-00-00" : t.CreationDate));
 
                 case SortType.Priority:
