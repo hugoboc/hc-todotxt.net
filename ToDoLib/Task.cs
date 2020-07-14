@@ -21,7 +21,7 @@ namespace ToDoLib
         private const string CreatedDatePattern = @"(?<date>(\d{4})-(\d{2})-(\d{2}))";
 
         private const string RelativeDatePatternBare =
-            @"(?<dateRelative>today|tomorrow|(?<dateRelativeOffset>(\d+[dwm]))|(?<weekday>mon(?:day)?|tue(?:sday)?|wed(?:nesday)?|thu(?:rsday)?|fri(?:day)?|sat(?:urday)?|sun(?:day)?))";
+            @"(?<dateRelative>today|tomorrow|(?<dateRelativeOffset>(-?\d+[dwm]))|(?<weekday>mon(?:day)?|tue(?:sday)?|wed(?:nesday)?|thu(?:rsday)?|fri(?:day)?|sat(?:urday)?|sun(?:day)?))";
         private const string DueRelativePattern = @"\bdue:" + RelativeDatePatternBare + @"\b";
         public const string ThresholdRelativePattern = @"t:"+ RelativeDatePatternBare;
 

@@ -56,6 +56,7 @@
         <RoutedUICommand x:Key="SortByCompleted" Text="Sort By Completed" />
         <RoutedUICommand x:Key="SortByContext" Text="Sort By Context" />
         <RoutedUICommand x:Key="SortByDueDate" Text="Sort By Due Date" />
+        <RoutedUICommand x:Key="SortByThreshold" Text="Sort By Threshold" />
         <RoutedUICommand x:Key="SortByCreatedDate" Text="Sort By Created Date" />
         <RoutedUICommand x:Key="SortByPriority" Text="Sort By Priority" />
         <RoutedUICommand x:Key="SortByProject" Text="Sort By Priority" />
@@ -151,6 +152,7 @@
         <CommandBinding Command="{StaticResource SortByCompleted}" CanExecute="WhenTasksLoadedCanExecute" Executed="SortByCompletedExecuted"/>
         <CommandBinding Command="{StaticResource SortByContext}" CanExecute="WhenTasksLoadedCanExecute" Executed="SortByContextExecuted"/>
         <CommandBinding Command="{StaticResource SortByDueDate}" CanExecute="WhenTasksLoadedCanExecute" Executed="SortByDueDateExecuted"/>
+        <CommandBinding Command="{StaticResource SortByThreshold}" CanExecute="WhenTasksLoadedCanExecute" Executed="SortByThresholdExecuted"/>
         <CommandBinding Command="{StaticResource SortByCreatedDate}" CanExecute="WhenTasksLoadedCanExecute" Executed="SortByCreatedDateExecuted"/>
         <CommandBinding Command="{StaticResource SortByPriority}" CanExecute="WhenTasksLoadedCanExecute" Executed="SortByPriorityExecuted"/>
         <CommandBinding Command="{StaticResource SortByProject}" CanExecute="WhenTasksLoadedCanExecute" Executed="SortByProjectExecuted"/>
@@ -204,6 +206,8 @@
         <KeyBinding Command="{StaticResource SortByPriority}" Key="NumPad6" Modifiers="Control"/>
         <KeyBinding Command="{StaticResource SortByProject}" Key="D7" Modifiers="Control"/>
         <KeyBinding Command="{StaticResource SortByProject}" Key="NumPad7" Modifiers="Control"/>
+        <KeyBinding Command="{StaticResource SortByThreshold}" Key="D8" Modifiers="Control"/>
+        <KeyBinding Command="{StaticResource SortByThreshold}" Key="NumPad8" Modifiers="Control"/>
         <KeyBinding Command="{StaticResource SortByFileOrder}" Key="D0" Modifiers="Control"/>
         <KeyBinding Command="{StaticResource SortByFileOrder}" Key="NumPad0" Modifiers="Control"/>
     </Window.InputBindings>
@@ -268,6 +272,7 @@
                 <MenuItem Header="C_reation Date" IsCheckable="True" Command="{StaticResource SortByCreatedDate}" InputGestureText="Ctrl+5" Tag="CreatedDate"/>
                 <MenuItem Header="_Priority" IsCheckable="True" Command="{StaticResource SortByPriority}" InputGestureText="Ctrl+6" Tag="Priority"/>
                 <MenuItem Header="Pro_ject" IsCheckable="True" Command="{StaticResource SortByProject}" InputGestureText="Ctrl+7" Tag="Project"/>
+                <MenuItem Header="_Threshold" IsCheckable="True" Command="{StaticResource SortByThreshold}" InputGestureText="Ctrl+8" Tag="Threshold"/>
             </MenuItem>
             <MenuItem Header="Filter" Name="filterMenu">
                 <MenuItem Header="Hide future tasks" Command="{StaticResource ApplyFilterFutureTasks}" InputGestureText="Ctrl+T" IsCheckable="True" Tag="FutureTasks" FontWeight="Normal" />
