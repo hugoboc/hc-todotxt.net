@@ -734,6 +734,7 @@ namespace Client
         public void ApplyHideFutureTasks()
         {
             User.Default.FilterFutureTasks = !User.Default.FilterFutureTasks;
+            GetSelectedTasks();
             UpdateDisplayedTasks();
             SetSelectedTasks();
 
