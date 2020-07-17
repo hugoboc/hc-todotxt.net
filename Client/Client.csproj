@@ -80,6 +80,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ThemeService.cs" />
     <Compile Include="Controls\DeleteConfirmationDialog.xaml.cs">
       <DependentUpon>DeleteConfirmationDialog.xaml</DependentUpon>
     </Compile>
