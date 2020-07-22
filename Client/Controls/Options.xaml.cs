@@ -42,6 +42,7 @@ namespace Client
             this.TaskListFont = taskFont;
             this.cbDisplayStatusBar.IsChecked = User.Default.DisplayStatusBar;
             this.cbCheckForUpdates.IsChecked = User.Default.CheckForUpdates;
+            this.cbSelectCurrentFilterString.IsChecked = User.Default.SelectCurrentFilterString;
         }
 
         private FontInfo taskListFont;
