@@ -5,7 +5,6 @@
 //
 //     Changes to this file may cause incorrect behavior and will be lost if
 //     the code is regenerated.
-
 // </auto-generated>
 //------------------------------------------------------------------------------
 
@@ -13,7 +12,7 @@ namespace Client {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "14.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.6.0.0")]
     internal sealed partial class User : global::System.Configuration.ApplicationSettingsBase {
         
         private static User defaultInstance = ((User)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new User())));
@@ -333,6 +332,42 @@ namespace Client {
             }
             set {
                 this["TaskListFontBrushColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        public string ProjectBrushColor {
+            get {
+                return ((string)(this["ProjectBrushColor"]));
+            }
+            set {
+                this["ProjectBrushColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        public string ContextBrushColor {
+            get {
+                return ((string)(this["ContextBrushColor"]));
+            }
+            set {
+                this["ContextBrushColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        public string DateBrushColor {
+            get {
+                return ((string)(this["DateBrushColor"]));
+            }
+            set {
+                this["DateBrushColor"] = value;
             }
         }
         

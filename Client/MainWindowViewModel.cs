@@ -1607,7 +1607,10 @@ namespace Client
                 User.Default.TaskListFontStyle != o.TaskListFont.Style.ToString() ||
                 User.Default.TaskListFontWeight != o.TaskListFont.Weight.ToString() ||
                 User.Default.TaskListFontStretch != o.TaskListFont.Stretch.ToString() ||
-                User.Default.TaskListFontBrushColor != o.TaskListFont.BrushColor.ToString()
+                User.Default.TaskListFontBrushColor != o.TaskListFont.BrushColor.ToString() ||
+                User.Default.ProjectBrushColor != o.colorPickerProject.SelectedColor.Brush.ToString() ||
+                User.Default.ContextBrushColor != o.colorPickerContext.SelectedColor.Brush.ToString() ||
+                User.Default.DateBrushColor != o.colorPickerDate.SelectedColor.Brush.ToString()
                 );
 
             User.Default.ArchiveFilePath = o.tbArchiveFile.Text;
@@ -1640,6 +1643,10 @@ namespace Client
 
             User.Default.DisplayStatusBar = o.cbDisplayStatusBar.IsChecked.Value;
             User.Default.CheckForUpdates = o.cbCheckForUpdates.IsChecked.Value;
+
+            User.Default.ProjectBrushColor = o.colorPickerProject.SelectedColor.Brush.ToString();
+            User.Default.ContextBrushColor = o.colorPickerContext.SelectedColor.Brush.ToString();
+            User.Default.DateBrushColor = o.colorPickerDate.SelectedColor.Brush.ToString();
 
             User.Default.Save();
 

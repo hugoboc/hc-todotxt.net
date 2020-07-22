@@ -67,5 +67,15 @@ namespace ColorFont
             this.SetValue(SelectedColorProperty, this.viewModel.SelectedFontColor);
         }
 
+        public void selectColor(Color color)
+        {
+            SolidColorBrush brush = new SolidColorBrush(color);
+            FontColor fontColor = AvailableColors.GetFontColor(brush);
+            int colorIdx = AvailableColors.GetFontColorIndex(fontColor);
+
+            this.superCombo.SelectedIndex = colorIdx;
+            this.SelectedColor.Brush = brush;
+        }
+
     }
 }

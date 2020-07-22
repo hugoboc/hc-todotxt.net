@@ -112,5 +112,12 @@ namespace Client
                 this.TaskListFont = taskFontDialog.Font;
             }
         }
+
+        private void Content_Rendered(object sender, EventArgs e)
+        {
+            this.colorPickerProject.selectColor((Color)ColorConverter.ConvertFromString(User.Default.ProjectBrushColor));
+            this.colorPickerDate.selectColor((Color)ColorConverter.ConvertFromString(User.Default.DateBrushColor));
+            this.colorPickerContext.selectColor((Color)ColorConverter.ConvertFromString(User.Default.ContextBrushColor));
+        }
     }
 }

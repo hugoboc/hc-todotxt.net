@@ -63,15 +63,15 @@ namespace Client
                 }
                 else if (s.StartsWith("@") && s.Length > 1)
                 {
-                    textBlock.Inlines.Add(new Run(s) { Foreground = Brushes.LightSlateGray });
+                    textBlock.Inlines.Add(new Run(s) { Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString(User.Default.ContextBrushColor)) });
                 }
                 else if (s.StartsWith("+") && s.Length > 1)
                 {
-                    textBlock.Inlines.Add(new Run(s) { Foreground = Brushes.DarkKhaki });
+                    textBlock.Inlines.Add(new Run(s) { Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString(User.Default.ProjectBrushColor)) });
                 }
                 else if (s.StartsWith("t:") || s.StartsWith("due:"))
                 {
-                    textBlock.Inlines.Add(new Run(s) { Foreground = Brushes.RosyBrown });
+                    textBlock.Inlines.Add(new Run(s) { Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString(User.Default.DateBrushColor)) });
                 }
                 else if (s.StartsWith("http://") || s.StartsWith("www.") || s.StartsWith("https://"))
                 {
