@@ -556,6 +556,12 @@ namespace Client
             f.FilterTextPreset8 = User.Default.FilterTextPreset8;
             f.FilterTextPreset9 = User.Default.FilterTextPreset9;
 
+            // select text of main filter for easy overwrite
+            if(User.Default.SelectCurrentFilterString)
+            {
+                f.tbFilter.SelectAll();
+            }
+
             if (f.ShowDialog().Value)
             {
                 User.Default.FilterText = f.FilterText.Trim();
@@ -1640,6 +1646,7 @@ namespace Client
 
             User.Default.DisplayStatusBar = o.cbDisplayStatusBar.IsChecked.Value;
             User.Default.CheckForUpdates = o.cbCheckForUpdates.IsChecked.Value;
+            User.Default.SelectCurrentFilterString = o.cbSelectCurrentFilterString.IsChecked.Value;
 
             User.Default.Save();
 
