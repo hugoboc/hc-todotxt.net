@@ -57,19 +57,19 @@ namespace Client
             }
         }
 
-        private int _activeFilterNumber = -1;
-        public int ActiveFilterNumber
+        private String _activeFilterString = "";
+        public String ActiveFilterString
         {
             get
             {
-                return _activeFilterNumber;
+                return _activeFilterString;
             }
             private set
             {
-                if (_activeFilterNumber != value)
+                if (_activeFilterString != value)
                 {
-                    _activeFilterNumber = value;
-                    RaiseProperyChanged(nameof(ActiveFilterNumber));
+                    _activeFilterString = value;
+                    RaiseProperyChanged(nameof(ActiveFilterString));
                 }
             }
         }
@@ -182,7 +182,7 @@ namespace Client
 
             SortType = (SortType)User.Default.CurrentSort;
 
-            ActiveFilterNumber=0;
+            ActiveFilterString = User.Default.FilterText;
 
             if (!string.IsNullOrEmpty(User.Default.FilePath))
             {
@@ -580,6 +580,7 @@ namespace Client
                 GetSelectedTasks();
 				UpdateDisplayedTasks();
                 SetSelectedTasks();
+                ActiveFilterString = User.Default.FilterText;
             }
         }
 
@@ -803,7 +804,7 @@ namespace Client
             
             User.Default.Save();
 
-            ActiveFilterNumber = filterPresetNumber;
+            ActiveFilterString = User.Default.FilterText;
         }
         #endregion
 

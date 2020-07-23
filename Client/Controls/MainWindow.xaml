@@ -425,7 +425,7 @@
         <Button Grid.Row="0" Grid.RowSpan="2"  Content="Cancel" Height="23" HorizontalAlignment="Left" Margin="97,23,0,0" Name="btnCancelPrint" VerticalAlignment="Top" Width="92" Visibility="Hidden" Click="btnCancelPrint_Click" />
         <!-- Status bar inspired by TodoTxtMac  -->
         <StatusBar Grid.Row="3" Name="sbTaskSummary" Background="#FF1D2528" Foreground="#A5F2FFFC">
-            <TextBlock Name="lblFilterStatus" Text="{Binding ActiveFilterNumber, Mode=OneWay, Converter= {StaticResource filterToStatusConv}}" VerticalAlignment="Bottom"></TextBlock>
+            <TextBlock Name="lblFilterStatus" Text="{Binding ActiveFilterString, Mode=OneWay, Converter= {StaticResource filterToStatusConv}}" VerticalAlignment="Bottom"></TextBlock>
             <Separator></Separator>
             <TextBlock Text="Sort:"/>
             <TextBlock Text="{Binding SortType, Mode=OneWay, Converter={StaticResource sortTypeToDescConv}}"/>
