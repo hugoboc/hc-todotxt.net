@@ -290,8 +290,8 @@
             <RowDefinition Height="*" ></RowDefinition>
             <RowDefinition Height="23"></RowDefinition>
         </Grid.RowDefinitions>
-        <Menu Grid.Row="0" Height="23" Name="menu1" VerticalAlignment="Top" IsMainMenu="True" KeyboardNavigation.TabNavigation="None" Background="#FF1D2528" Foreground="#A5F2FFFC">
-            <MenuItem Header="_File" Template="{DynamicResource MenuTemplate}">
+        <Menu Grid.Row="0" Height="25" Name="menu1" VerticalAlignment="Top" IsMainMenu="True" KeyboardNavigation.TabNavigation="None" Background="#FF1D2528" Foreground="#A5F2FFFC">
+            <MenuItem Header="_File" Template="{DynamicResource MenuTemplate}" Height="25">
                 <MenuItem Header="_New" Command="{StaticResource NewFile}" InputGestureText="Ctrl+N"/>
                 <MenuItem Header="_Open" Command="{StaticResource OpenFile}" InputGestureText="Ctrl+O"/>
                 <MenuItem Header="_Print" Command="{StaticResource PrintFile}" InputGestureText="Ctrl+P"/>
