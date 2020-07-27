@@ -118,6 +118,7 @@
             <Setter Property="BorderBrush" Value="#FF1D2528"/>
             <Setter Property="BorderThickness" Value="1" />
         </Style>
+        <!-- From: https://stackoverflow.com/a/12115730 -->
         <Style x:Key="{x:Static MenuItem.SeparatorStyleKey}" TargetType="{x:Type Separator}">
             <Setter Property="Background" Value="{DynamicResource {x:Static SystemColors.ControlDarkBrushKey}}"/>
             <Setter Property="Margin" Value="1,0"/>
