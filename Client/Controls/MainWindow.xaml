@@ -459,8 +459,8 @@
             </ListBox.InputBindings>
             <ListBox.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel Background="#FF6BEA22">
-                        <TextBlock local:ThemeService.Text="{Binding Raw}" Style="{StaticResource WordWrapEnabledTextBlock}" Background="#FF273136">
+                    <StackPanel>
+                        <TextBlock local:ThemeService.Text="{Binding Raw}" Style="{StaticResource WordWrapEnabledTextBlock}">
                             <TextBlock.InputBindings>
                                 <MouseBinding Gesture="LeftDoubleClick" Command="{StaticResource UpdateTask}" />
                             </TextBlock.InputBindings>
