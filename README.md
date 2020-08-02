@@ -1,4 +1,25 @@
-### todotxt.net
+## todotxt.net Fork
+
+This is a fork of todotxt.net. 
+
+### Major Enhancements of this fork
+- support of relative date offset for threshold and due date when creating or filtering tasks (inspired by [topydo](https://github.com/bram85/topydo))
+	- t:0d > today
+	- t:-1d > yesterday
+	- t:2w > in two weeks
+	- t:3m > in 3 months
+- don't hide future tasks if filter contains a threshold (even if hide future tasks is set)
+- added sorting by threshold date
+- fix for losing focus after using `ctrl+t`
+- option to select currently active filter text when opening filter dialog
+- show currently active filter string in status bar instead of filter number
+- **Dark Mode** including coloring for tags (projects, contexts, thresholds, due dates)
+
+![](main.png)
+
+----
+
+### Original Readme
 
 This is an implemention of [todo.txt](http://todotxt.com/) using the .NET framework. As far as I am aware, it is fully compliant with [Gina's spec](https://github.com/ginatrapani/todo.txt-cli/wiki/The-Todo.txt-Format). 
 
