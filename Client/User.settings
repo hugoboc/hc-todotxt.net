@@ -78,17 +78,17 @@
       <Value Profile="(Default)">Normal</Value>
     </Setting>
     <Setting Name="TaskListFontBrushColor" Type="System.String" Scope="User">
-      <Value Profile="(Default)">Black</Value>
+      <Value Profile="(Default)">GhostWhite</Value>
     </Setting>
-	<Setting Name="ProjectBrushColor" Type="System.String" Scope="User">
-	  <Value Profile="(Default)">Black</Value>
-	</Setting>
-	<Setting Name="ContextBrushColor" Type="System.String" Scope="User">
-		<Value Profile="(Default)">Black</Value>
-	</Setting>
-	<Setting Name="DateBrushColor" Type="System.String" Scope="User">
-		<Value Profile="(Default)">Black</Value>
-	</Setting>
+  <Setting Name="ProjectBrushColor" Type="System.String" Scope="User">
+    <Value Profile="(Default)">DarkSeaGreen</Value>
+  </Setting>
+  <Setting Name="ContextBrushColor" Type="System.String" Scope="User">
+    <Value Profile="(Default)">LightSlateGray</Value>
+  </Setting>
+  <Setting Name="DateBrushColor" Type="System.String" Scope="User">
+    <Value Profile="(Default)">RosyBrown</Value>
+  </Setting>
     <Setting Name="AllowGrouping" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
@@ -137,8 +137,8 @@
     <Setting Name="CheckForUpdates" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
-	<Setting Name="SelectCurrentFilterString" Type="System.Boolean" Scope="User">
-		<Value Profile="(Default)">False</Value>
-	</Setting>
+  <Setting Name="SelectCurrentFilterString" Type="System.Boolean" Scope="User">
+    <Value Profile="(Default)">False</Value>
+  </Setting>
   </Settings>
 </SettingsFile>

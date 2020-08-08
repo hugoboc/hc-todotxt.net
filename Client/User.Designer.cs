@@ -325,7 +325,7 @@ namespace Client {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        [global::System.Configuration.DefaultSettingValueAttribute("GhostWhite")]
         public string TaskListFontBrushColor {
             get {
                 return ((string)(this["TaskListFontBrushColor"]));
@@ -337,7 +337,7 @@ namespace Client {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        [global::System.Configuration.DefaultSettingValueAttribute("DarkSeaGreen")]
         public string ProjectBrushColor {
             get {
                 return ((string)(this["ProjectBrushColor"]));
@@ -349,7 +349,7 @@ namespace Client {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        [global::System.Configuration.DefaultSettingValueAttribute("LightSlateGray")]
         public string ContextBrushColor {
             get {
                 return ((string)(this["ContextBrushColor"]));
@@ -361,7 +361,7 @@ namespace Client {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        [global::System.Configuration.DefaultSettingValueAttribute("RosyBrown")]
         public string DateBrushColor {
             get {
                 return ((string)(this["DateBrushColor"]));
