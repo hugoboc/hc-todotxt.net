@@ -14,9 +14,9 @@ This is a fork of todotxt.net.
 - option to select currently active filter text when opening filter dialog
 - show currently active filter string in status bar instead of filter number
 - **Dark Mode** including coloring for tags (projects, contexts, thresholds, due dates)
-
 ![](main.png)
-
+- define sorting for your filters (inspired by [Simpletask](https://github.com/mpcjanssen/simpletask-android))
+![](filter_dialog.png)
 ----
 
 ### Original Readme
