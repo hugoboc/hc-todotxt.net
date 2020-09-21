@@ -481,6 +481,114 @@ namespace Client {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("None")]
+        public string SortTypePreset1 {
+            get {
+                return ((string)(this["SortTypePreset1"]));
+            }
+            set {
+                this["SortTypePreset1"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("None")]
+        public string SortTypePreset2 {
+            get {
+                return ((string)(this["SortTypePreset2"]));
+            }
+            set {
+                this["SortTypePreset2"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("None")]
+        public string SortTypePreset3 {
+            get {
+                return ((string)(this["SortTypePreset3"]));
+            }
+            set {
+                this["SortTypePreset3"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("None")]
+        public string SortTypePreset4 {
+            get {
+                return ((string)(this["SortTypePreset4"]));
+            }
+            set {
+                this["SortTypePreset4"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("None")]
+        public string SortTypePreset5 {
+            get {
+                return ((string)(this["SortTypePreset5"]));
+            }
+            set {
+                this["SortTypePreset5"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("None")]
+        public string SortTypePreset6 {
+            get {
+                return ((string)(this["SortTypePreset6"]));
+            }
+            set {
+                this["SortTypePreset6"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("None")]
+        public string SortTypePreset7 {
+            get {
+                return ((string)(this["SortTypePreset7"]));
+            }
+            set {
+                this["SortTypePreset7"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("None")]
+        public string SortTypePreset8 {
+            get {
+                return ((string)(this["SortTypePreset8"]));
+            }
+            set {
+                this["SortTypePreset8"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("None")]
+        public string SortTypePreset9 {
+            get {
+                return ((string)(this["SortTypePreset9"]));
+            }
+            set {
+                this["SortTypePreset9"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("False")]
         public bool WordWrap {
             get {

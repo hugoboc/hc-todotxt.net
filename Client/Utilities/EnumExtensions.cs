@@ -36,5 +36,34 @@ namespace Client.Utilities
             return enumerationValue.ToString();
 
         }
+
+        public static List<string> GetEnumDescriptions<T>() where T : System.Enum
+        {
+            List<string> descriptions = new List<string>();
+
+            T[] values = (T[])System.Enum.GetValues(typeof(T));
+
+            foreach (T value in values)
+            {
+                descriptions.Add(value.GetDescription());
+            }
+
+            return descriptions;
+        }
+
+        public static T GetEnumValueFromDescription<T>(string description) where T : System.Enum
+        {
+            T[] values = (T[])System.Enum.GetValues(typeof(T));
+
+            foreach (T value in values)
+            {
+                if (description.Equals(value.GetDescription()))
+                {
+                    return value;
+                }
+            }
+
+            return values[0];
+        }
     }
 }

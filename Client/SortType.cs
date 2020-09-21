@@ -5,7 +5,8 @@ namespace Client
     // @sckaushal: Issue 279: Added description attribute to display in status
     public enum SortType
     {
-        
+        [Description("---")]
+        None,
         Alphabetical,
         Completed,
         Context,
@@ -14,7 +15,7 @@ namespace Client
         Priority,
         Project,
         [Description("Order in file")]
-        None,
+        OrderInFile,
         [Description("Creation Date")]
         Created,
         Threshold

@@ -435,7 +435,7 @@ namespace Client
 
         private void SortByFileOrderExecuted(object sender, RoutedEventArgs e)
         {
-            ViewModel.SortList(SortType.None);            
+            ViewModel.SortList(SortType.OrderInFile);            
         }
 
         private void SortByContextExecuted(object sender, RoutedEventArgs e)

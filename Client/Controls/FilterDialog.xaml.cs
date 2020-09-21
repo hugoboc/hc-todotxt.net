@@ -1,5 +1,8 @@
-﻿using System.Windows;
+﻿using System.Collections.Generic;
+using System.Linq;
+using System.Windows;
 using System.Windows.Input;
+using Client.Utilities;
 
 namespace Client
 {
@@ -71,6 +74,60 @@ namespace Client
             set { tbFilterPreset9.Text = value; tbFilterPreset9.CaretIndex = tbFilterPreset9.Text.Length; }
         }
 
+        public SortType sortTypePreset1
+        {
+            get { return EnumExtensions.GetEnumValueFromDescription<SortType>((string)tbCombo1.SelectedItem);}
+            set { tbCombo1.SelectedItem = value.GetDescription(); }
+        }
+
+        public SortType sortTypePreset2
+        {
+            get { return EnumExtensions.GetEnumValueFromDescription<SortType>((string)tbCombo2.SelectedItem); }
+            set { tbCombo2.SelectedItem = value.GetDescription(); }
+        }
+        
+        public SortType sortTypePreset3
+        {
+            get { return EnumExtensions.GetEnumValueFromDescription<SortType>((string)tbCombo3.SelectedItem); }
+            set { tbCombo3.SelectedItem = value.GetDescription(); }
+        }
+        
+        public SortType sortTypePreset4
+        {
+            get { return EnumExtensions.GetEnumValueFromDescription<SortType>((string)tbCombo4.SelectedItem); }
+            set { tbCombo4.SelectedItem = value.GetDescription(); }
+        }
+        
+        public SortType sortTypePreset5
+        {
+            get { return EnumExtensions.GetEnumValueFromDescription<SortType>((string)tbCombo5.SelectedItem); }
+            set { tbCombo5.SelectedItem = value.GetDescription(); }
+        }
+        
+        public SortType sortTypePreset6
+        {
+            get { return EnumExtensions.GetEnumValueFromDescription<SortType>((string)tbCombo6.SelectedItem); }
+            set { tbCombo6.SelectedItem = value.GetDescription(); }
+        }
+        
+        public SortType sortTypePreset7
+        {
+            get { return EnumExtensions.GetEnumValueFromDescription<SortType>((string)tbCombo7.SelectedItem); }
+            set { tbCombo7.SelectedItem = value.GetDescription(); }
+        }
+        
+        public SortType sortTypePreset8
+        {
+            get { return EnumExtensions.GetEnumValueFromDescription<SortType>((string)tbCombo8.SelectedItem); }
+            set { tbCombo8.SelectedItem = value.GetDescription(); }
+        }
+
+        public SortType sortTypePreset9
+        {
+            get { return EnumExtensions.GetEnumValueFromDescription<SortType>((string)tbCombo9.SelectedItem); }
+            set { tbCombo9.SelectedItem = value.GetDescription(); }
+        }
+
         public FilterDialog(MainWindowViewModel parentWindowViewModel) : this()
         {
             _parentWindowViewModel = parentWindowViewModel;
@@ -82,6 +139,16 @@ namespace Client
             InitializeComponent();
             tbFilter.Focus();
             _parentWindowViewModel = null;
+
+            tbCombo1.ItemsSource = EnumExtensions.GetEnumDescriptions<SortType>();
+            tbCombo2.ItemsSource = EnumExtensions.GetEnumDescriptions<SortType>();
+            tbCombo3.ItemsSource = EnumExtensions.GetEnumDescriptions<SortType>();
+            tbCombo4.ItemsSource = EnumExtensions.GetEnumDescriptions<SortType>();
+            tbCombo5.ItemsSource = EnumExtensions.GetEnumDescriptions<SortType>();
+            tbCombo6.ItemsSource = EnumExtensions.GetEnumDescriptions<SortType>();
+            tbCombo7.ItemsSource = EnumExtensions.GetEnumDescriptions<SortType>();
+            tbCombo8.ItemsSource = EnumExtensions.GetEnumDescriptions<SortType>();
+            tbCombo9.ItemsSource = EnumExtensions.GetEnumDescriptions<SortType>();
         }
 
         private void OK_Click(object sender, RoutedEventArgs e)

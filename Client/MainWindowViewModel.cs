@@ -394,7 +394,7 @@ namespace Client
 
                 _myView = (CollectionView)CollectionViewSource.GetDefaultView(sortedTaskList);
 
-                if (User.Default.AllowGrouping && SortType != SortType.Alphabetical && SortType != SortType.None)
+                if (User.Default.AllowGrouping && SortType != SortType.Alphabetical && SortType != SortType.OrderInFile)
                 {
                     if (_myView.CanGroup)
                     {
@@ -555,6 +555,15 @@ namespace Client
             f.FilterTextPreset7 = User.Default.FilterTextPreset7;
             f.FilterTextPreset8 = User.Default.FilterTextPreset8;
             f.FilterTextPreset9 = User.Default.FilterTextPreset9;
+            f.sortTypePreset1 = (SortType)Enum.Parse(typeof(SortType), User.Default.SortTypePreset1);
+            f.sortTypePreset2 = (SortType)Enum.Parse(typeof(SortType), User.Default.SortTypePreset2);
+            f.sortTypePreset3 = (SortType)Enum.Parse(typeof(SortType), User.Default.SortTypePreset3);
+            f.sortTypePreset4 = (SortType)Enum.Parse(typeof(SortType), User.Default.SortTypePreset4);
+            f.sortTypePreset5 = (SortType)Enum.Parse(typeof(SortType), User.Default.SortTypePreset5);
+            f.sortTypePreset6 = (SortType)Enum.Parse(typeof(SortType), User.Default.SortTypePreset6);
+            f.sortTypePreset7 = (SortType)Enum.Parse(typeof(SortType), User.Default.SortTypePreset7);
+            f.sortTypePreset8 = (SortType)Enum.Parse(typeof(SortType), User.Default.SortTypePreset8);
+            f.sortTypePreset9 = (SortType)Enum.Parse(typeof(SortType), User.Default.SortTypePreset9);
 
             // select text of main filter for easy overwrite
             if(User.Default.SelectCurrentFilterString)
@@ -574,6 +583,16 @@ namespace Client
                 User.Default.FilterTextPreset7 = f.FilterTextPreset7.Trim();
                 User.Default.FilterTextPreset8 = f.FilterTextPreset8.Trim();
                 User.Default.FilterTextPreset9 = f.FilterTextPreset9.Trim();
+
+                User.Default.SortTypePreset1 = f.sortTypePreset1.ToString();
+                User.Default.SortTypePreset2 = f.sortTypePreset2.ToString();
+                User.Default.SortTypePreset3 = f.sortTypePreset3.ToString();
+                User.Default.SortTypePreset4 = f.sortTypePreset4.ToString();
+                User.Default.SortTypePreset5 = f.sortTypePreset5.ToString();
+                User.Default.SortTypePreset6 = f.sortTypePreset6.ToString();
+                User.Default.SortTypePreset7 = f.sortTypePreset7.ToString();
+                User.Default.SortTypePreset8 = f.sortTypePreset8.ToString();
+                User.Default.SortTypePreset9 = f.sortTypePreset9.ToString();
 
                 User.Default.Save();
 
@@ -762,6 +781,8 @@ namespace Client
 
         private void ApplyFilterPreset(int filterPresetNumber)
         {
+
+            SortType sortType = SortType.None;
             switch (filterPresetNumber)
             {
                 case 0:
@@ -769,33 +790,47 @@ namespace Client
                     break;
                 case 1:
                     User.Default.FilterText = User.Default.FilterTextPreset1;
+                    Enum.TryParse(User.Default.SortTypePreset1, out sortType);
                     break;
                 case 2:
                     User.Default.FilterText = User.Default.FilterTextPreset2;
+                    Enum.TryParse(User.Default.SortTypePreset2, out sortType);
                     break;
                 case 3:
                     User.Default.FilterText = User.Default.FilterTextPreset3;
+                    Enum.TryParse(User.Default.SortTypePreset3, out sortType);
                     break;
                 case 4:
                     User.Default.FilterText = User.Default.FilterTextPreset4;
+                    Enum.TryParse(User.Default.SortTypePreset4, out sortType);
                     break;
                 case 5:
                     User.Default.FilterText = User.Default.FilterTextPreset5;
+                    Enum.TryParse(User.Default.SortTypePreset5, out sortType);
                     break;
                 case 6:
                     User.Default.FilterText = User.Default.FilterTextPreset6;
+                    Enum.TryParse(User.Default.SortTypePreset6, out sortType);
                     break;
                 case 7:
                     User.Default.FilterText = User.Default.FilterTextPreset7;
+                    Enum.TryParse(User.Default.SortTypePreset7, out sortType);
                     break;
                 case 8:
                     User.Default.FilterText = User.Default.FilterTextPreset8;
+                    Enum.TryParse(User.Default.SortTypePreset8, out sortType);
                     break;
                 case 9:
                     User.Default.FilterText = User.Default.FilterTextPreset9;
+                    Enum.TryParse(User.Default.SortTypePreset9, out sortType);
                     break;
                 default:
                     return;
+            }
+
+            if(sortType != SortType.None)
+            {
+                SortType = sortType;
             }
             
             GetSelectedTasks();
@@ -897,8 +932,10 @@ namespace Client
                         .ThenBy(t => (string.IsNullOrEmpty(t.Priority) ? "(zzz)" : t.Priority))
                         .ThenBy(t => (string.IsNullOrEmpty(t.DueDate) ? "9999-99-99" : t.DueDate));
 
-                default:
+                case SortType.OrderInFile:
                     _window.SetSelectedMenuItem(_window.sortMenu, "File");
+                    return tasks;
+                default:
                     return tasks;
             }
         }
