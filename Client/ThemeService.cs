@@ -65,6 +65,10 @@ namespace Client
                 {
                     textBlock.Inlines.Add(new Run(s) { Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString(User.Default.ContextBrushColor)) });
                 }
+                else if (s.StartsWith("[") && s.Length > 1)
+                {
+                    textBlock.Inlines.Add(new Run(s) { Foreground = Brushes.Gold });
+                }
                 else if (s.StartsWith("+") && s.Length > 1)
                 {
                     textBlock.Inlines.Add(new Run(s) { Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString(User.Default.ProjectBrushColor)) });
