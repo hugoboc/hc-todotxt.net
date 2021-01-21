@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.30110.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30204.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ToDoLib", "ToDoLib\ToDoLib.csproj", "{07AA9CEA-4EF0-4B47-AFBD-6F74AD9C4653}"
 EndProject
@@ -34,6 +34,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|Mixed Platforms = Release|Mixed Platforms
 		Release|x86 = Release|x86
+		todotxt-bh|Any CPU = todotxt-bh|Any CPU
+		todotxt-bh|Mixed Platforms = todotxt-bh|Mixed Platforms
+		todotxt-bh|x86 = todotxt-bh|x86
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{07AA9CEA-4EF0-4B47-AFBD-6F74AD9C4653}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -46,6 +49,12 @@ Global
 		{07AA9CEA-4EF0-4B47-AFBD-6F74AD9C4653}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{07AA9CEA-4EF0-4B47-AFBD-6F74AD9C4653}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{07AA9CEA-4EF0-4B47-AFBD-6F74AD9C4653}.Release|x86.ActiveCfg = Release|Any CPU
+		{07AA9CEA-4EF0-4B47-AFBD-6F74AD9C4653}.todotxt-bh|Any CPU.ActiveCfg = todotxt-bh|Any CPU
+		{07AA9CEA-4EF0-4B47-AFBD-6F74AD9C4653}.todotxt-bh|Any CPU.Build.0 = todotxt-bh|Any CPU
+		{07AA9CEA-4EF0-4B47-AFBD-6F74AD9C4653}.todotxt-bh|Mixed Platforms.ActiveCfg = todotxt-bh|Any CPU
+		{07AA9CEA-4EF0-4B47-AFBD-6F74AD9C4653}.todotxt-bh|Mixed Platforms.Build.0 = todotxt-bh|Any CPU
+		{07AA9CEA-4EF0-4B47-AFBD-6F74AD9C4653}.todotxt-bh|x86.ActiveCfg = todotxt-bh|Any CPU
+		{07AA9CEA-4EF0-4B47-AFBD-6F74AD9C4653}.todotxt-bh|x86.Build.0 = todotxt-bh|Any CPU
 		{11B849E6-E525-4AE8-B6C8-4CE6FE9C0338}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{11B849E6-E525-4AE8-B6C8-4CE6FE9C0338}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{11B849E6-E525-4AE8-B6C8-4CE6FE9C0338}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -55,6 +64,10 @@ Global
 		{11B849E6-E525-4AE8-B6C8-4CE6FE9C0338}.Release|Any CPU.Build.0 = Release|Any CPU
 		{11B849E6-E525-4AE8-B6C8-4CE6FE9C0338}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{11B849E6-E525-4AE8-B6C8-4CE6FE9C0338}.Release|x86.ActiveCfg = Release|Any CPU
+		{11B849E6-E525-4AE8-B6C8-4CE6FE9C0338}.todotxt-bh|Any CPU.ActiveCfg = todotxt-bh|Any CPU
+		{11B849E6-E525-4AE8-B6C8-4CE6FE9C0338}.todotxt-bh|Mixed Platforms.ActiveCfg = todotxt-bh|Any CPU
+		{11B849E6-E525-4AE8-B6C8-4CE6FE9C0338}.todotxt-bh|x86.ActiveCfg = todotxt-bh|Any CPU
+		{11B849E6-E525-4AE8-B6C8-4CE6FE9C0338}.todotxt-bh|x86.Build.0 = todotxt-bh|Any CPU
 		{FC3F905A-DEE1-454E-8746-936492D66CF2}.Debug|Any CPU.ActiveCfg = Debug|x86
 		{FC3F905A-DEE1-454E-8746-936492D66CF2}.Debug|Mixed Platforms.ActiveCfg = Debug|x86
 		{FC3F905A-DEE1-454E-8746-936492D66CF2}.Debug|Mixed Platforms.Build.0 = Debug|x86
@@ -65,6 +78,11 @@ Global
 		{FC3F905A-DEE1-454E-8746-936492D66CF2}.Release|Mixed Platforms.Build.0 = Release|x86
 		{FC3F905A-DEE1-454E-8746-936492D66CF2}.Release|x86.ActiveCfg = Release|x86
 		{FC3F905A-DEE1-454E-8746-936492D66CF2}.Release|x86.Build.0 = Release|x86
+		{FC3F905A-DEE1-454E-8746-936492D66CF2}.todotxt-bh|Any CPU.ActiveCfg = todotxt-bh|x86
+		{FC3F905A-DEE1-454E-8746-936492D66CF2}.todotxt-bh|Mixed Platforms.ActiveCfg = todotxt-bh|x86
+		{FC3F905A-DEE1-454E-8746-936492D66CF2}.todotxt-bh|Mixed Platforms.Build.0 = todotxt-bh|x86
+		{FC3F905A-DEE1-454E-8746-936492D66CF2}.todotxt-bh|x86.ActiveCfg = todotxt-bh|x86
+		{FC3F905A-DEE1-454E-8746-936492D66CF2}.todotxt-bh|x86.Build.0 = todotxt-bh|x86
 		{C51DEEDA-B581-401B-870B-DBB7D10119BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C51DEEDA-B581-401B-870B-DBB7D10119BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C51DEEDA-B581-401B-870B-DBB7D10119BF}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -75,6 +93,12 @@ Global
 		{C51DEEDA-B581-401B-870B-DBB7D10119BF}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{C51DEEDA-B581-401B-870B-DBB7D10119BF}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{C51DEEDA-B581-401B-870B-DBB7D10119BF}.Release|x86.ActiveCfg = Release|Any CPU
+		{C51DEEDA-B581-401B-870B-DBB7D10119BF}.todotxt-bh|Any CPU.ActiveCfg = todotxt-bh|Any CPU
+		{C51DEEDA-B581-401B-870B-DBB7D10119BF}.todotxt-bh|Any CPU.Build.0 = todotxt-bh|Any CPU
+		{C51DEEDA-B581-401B-870B-DBB7D10119BF}.todotxt-bh|Mixed Platforms.ActiveCfg = todotxt-bh|Any CPU
+		{C51DEEDA-B581-401B-870B-DBB7D10119BF}.todotxt-bh|Mixed Platforms.Build.0 = todotxt-bh|Any CPU
+		{C51DEEDA-B581-401B-870B-DBB7D10119BF}.todotxt-bh|x86.ActiveCfg = todotxt-bh|Any CPU
+		{C51DEEDA-B581-401B-870B-DBB7D10119BF}.todotxt-bh|x86.Build.0 = todotxt-bh|Any CPU
 		{5CE19CC1-833A-4950-B86E-CBF59FA00D6F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{5CE19CC1-833A-4950-B86E-CBF59FA00D6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5CE19CC1-833A-4950-B86E-CBF59FA00D6F}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
@@ -85,8 +109,17 @@ Global
 		{5CE19CC1-833A-4950-B86E-CBF59FA00D6F}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{5CE19CC1-833A-4950-B86E-CBF59FA00D6F}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{5CE19CC1-833A-4950-B86E-CBF59FA00D6F}.Release|x86.ActiveCfg = Release|Any CPU
+		{5CE19CC1-833A-4950-B86E-CBF59FA00D6F}.todotxt-bh|Any CPU.ActiveCfg = todotxt-bh|Any CPU
+		{5CE19CC1-833A-4950-B86E-CBF59FA00D6F}.todotxt-bh|Any CPU.Build.0 = todotxt-bh|Any CPU
+		{5CE19CC1-833A-4950-B86E-CBF59FA00D6F}.todotxt-bh|Mixed Platforms.ActiveCfg = todotxt-bh|Any CPU
+		{5CE19CC1-833A-4950-B86E-CBF59FA00D6F}.todotxt-bh|Mixed Platforms.Build.0 = todotxt-bh|Any CPU
+		{5CE19CC1-833A-4950-B86E-CBF59FA00D6F}.todotxt-bh|x86.ActiveCfg = todotxt-bh|Any CPU
+		{5CE19CC1-833A-4950-B86E-CBF59FA00D6F}.todotxt-bh|x86.Build.0 = todotxt-bh|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {7836B046-FD1A-4C77-8162-7C2F8891991B}
 	EndGlobalSection
 EndGlobal
