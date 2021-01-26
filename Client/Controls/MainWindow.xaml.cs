@@ -556,7 +556,7 @@ namespace Client
 
     #endregion
 
-    #region help menu
+        #region help menu
 
     private void HelpAboutExecuted(object sender, RoutedEventArgs e)
         {
