@@ -40,13 +40,8 @@ namespace Client
             foreach (String s in strings)
             {
                 Match priorityMatch = new Regex(@"\([E-Z]\)").Match(s);
-                Match TaskTitle = new Regex(@"\[[^\][]*]").Match(s);
 
-                if (TaskTitle.Success)
-                {
-                    textBlock.Inlines.Add(new Run(s) { Foreground = Brushes.Yellow});
-                }
-                else if (s.Equals("(A)"))
+                if (s.Equals("(A)"))
                 {
                     textBlock.Inlines.Add(new Run(s) { Foreground = Brushes.Red, FontWeight = FontWeights.Bold });
                 }
@@ -69,6 +64,10 @@ namespace Client
                 else if (s.StartsWith("@") && s.Length > 1)
                 {
                     textBlock.Inlines.Add(new Run(s) { Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString(User.Default.ContextBrushColor)) });
+                }
+                else if (s.StartsWith("[") && s.Length > 1)
+                {
+                    textBlock.Inlines.Add(new Run(s) { Foreground = Brushes.Gold });
                 }
                 else if (s.StartsWith("+") && s.Length > 1)
                 {
