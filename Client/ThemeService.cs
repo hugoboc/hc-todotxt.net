@@ -23,6 +23,8 @@ namespace Client
         public static void SetText(DependencyObject d, string value)
         { d.SetValue(TextProperty, value); }
 
+        private const string context_pattern = @"(^|\s)(?<context>\@[^\s]+)";
+
         private static void OnTextChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             var textBlock = d as TextBlock;
@@ -37,9 +39,18 @@ namespace Client
 
             String[] strings = newText.Split(null);
 
-            foreach (String s in strings)
+
+                foreach (String s in strings)
             {
-                Match priorityMatch = new Regex(@"\([E-Z]\)").Match(s);
+                Match priorityMatch = new Regex(@"^(?<priority>\([A-Z]\)\s)").Match(s);
+                Match projectMatch = new Regex(@"(?<proj>(?<=^|\s)\+[^\s]+)").Match(s);
+                Match contextMatch = new Regex(@"(^|\s)(?<context>\@[^\s]+)").Match(s);
+                Match task_titleMatch = new Regex(@"\[[^\][]*]").Match(s);
+                Match created_dateMatch = new Regex(@"(?<date>(\d{4})-(\d{2})-(\d{2}))").Match(s);
+                Match due_dateMatch = new Regex(@"due:(?<date>(\d{4})-(\d{2})-(\d{2}))").Match(s);
+                Match mailMatch = new Regex(@"(E2T)(?!.*E2T)\S+").Match(s);
+                Match update_dateMatch = new Regex(@"(?<date>(\d{2})\D(\d{2})\D(\d{4}))").Match(s);
+
 
                 if (s.Equals("(A)"))
                 {
@@ -61,21 +72,29 @@ namespace Client
                 {
                     textBlock.Inlines.Add(new Run(s) { Foreground = Brushes.White, FontWeight = FontWeights.Bold });
                 }
-                else if (s.StartsWith("@") && s.Length > 1)
-                {
-                    textBlock.Inlines.Add(new Run(s) { Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString(User.Default.ContextBrushColor)) });
-                }
-                else if (s.StartsWith("[") && s.Length > 1)
+                else if (task_titleMatch.Success)
                 {
                     textBlock.Inlines.Add(new Run(s) { Foreground = Brushes.Gold });
                 }
-                else if (s.StartsWith("+") && s.Length > 1)
+                else if (contextMatch.Success)
+                {
+                    textBlock.Inlines.Add(new Run(s) { Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString(User.Default.ContextBrushColor)) });
+                }
+                else if (projectMatch.Success)
                 {
                     textBlock.Inlines.Add(new Run(s) { Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString(User.Default.ProjectBrushColor)) });
                 }
-                else if (s.StartsWith("t:") || s.StartsWith("due:"))
+                else if (due_dateMatch.Success)
                 {
                     textBlock.Inlines.Add(new Run(s) { Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString(User.Default.DateBrushColor)) });
+                }
+                else if (mailMatch.Success)
+                {
+                    textBlock.Inlines.Add(new Run(s) { Foreground = Brushes.MediumTurquoise });
+                }
+                else if (update_dateMatch.Success)
+                {
+                    textBlock.Inlines.Add(new Run(s) { Foreground = Brushes.SkyBlue });
                 }
                 else if (s.StartsWith("http://") || s.StartsWith("www.") || s.StartsWith("https://"))
                 {
