@@ -559,11 +559,23 @@ namespace Client
             SetSelectionOfMenuItem("HiddenTasks", User.Default.ShowHidenTasks);
         }
 
-    #endregion
+        public string SearchText
+        {
+            get { return tbSearchTerm.Text; }
+            set { tbSearchTerm.Text = value; tbSearchTerm.CaretIndex = tbSearchTerm.Text.Length; }
+        }
 
-    #region help menu
 
-    private void HelpAboutExecuted(object sender, RoutedEventArgs e)
+        public void OK_Click(object sender, RoutedEventArgs e)
+        {
+            ViewModel.ApplySearchFilter(SearchText);
+        }
+
+        #endregion
+
+        #region help menu
+
+        private void HelpAboutExecuted(object sender, RoutedEventArgs e)
         {
             ViewModel.ShowHelpDialog();
         }
@@ -667,6 +679,6 @@ namespace Client
         }
 
         #endregion
+
     }
 }
-

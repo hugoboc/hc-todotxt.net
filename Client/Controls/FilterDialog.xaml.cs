@@ -151,7 +151,7 @@ namespace Client
             tbCombo9.ItemsSource = EnumExtensions.GetEnumDescriptions<SortType>();
         }
 
-        private void OK_Click(object sender, RoutedEventArgs e)
+        public void OK_Click(object sender, RoutedEventArgs e)
         {
             this.DialogResult = true;
         }
@@ -180,7 +180,7 @@ namespace Client
             tbFilterPreset9.Clear();
         }
 
-        private void tbFilter_PreviewKeyUp(object sender, KeyEventArgs e)
+        public void tbFilter_PreviewKeyUp(object sender, KeyEventArgs e)
         {
 			if (e.Key == Key.Escape)
 				this.DialogResult = true;

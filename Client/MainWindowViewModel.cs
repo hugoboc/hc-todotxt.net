@@ -164,6 +164,7 @@ namespace Client
             }
         }
 
+
         private int tasksOverdue = 0;
 
 
@@ -705,6 +706,19 @@ namespace Client
                     filteredTasks.Add(task);
             }
             return filteredTasks;
+        }
+
+        public void ApplySearchFilter(string SearchTerm)
+        {
+            User.Default.FilterText = SearchTerm;
+
+            GetSelectedTasks();
+            UpdateDisplayedTasks();
+            SetSelectedTasks();
+
+            User.Default.Save();
+
+            ActiveFilterString = User.Default.FilterText;
         }
 
         public void ApplyFilterPreset0()

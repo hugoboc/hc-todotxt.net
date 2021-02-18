@@ -185,6 +185,11 @@
                 </Trigger>
             </ControlTemplate.Triggers>
         </ControlTemplate>
+        <Style TargetType="local:IntellisenseTextBox">
+            <Setter Property="Height" Value="70"/>
+            <Setter Property="TextWrapping" Value="Wrap"/>
+            <Setter Property="AcceptsReturn" Value="True"/>
+        </Style>
     </Window.Resources>
     <Window.CommandBindings>
         <!-- File menu commands -->
@@ -370,6 +375,18 @@
                 <MenuItem Header="_Donate" Command="{StaticResource Donate}" />
                 <MenuItem Header="_Show Calendar" Command="{StaticResource ShowCalendar}" InputGestureText="Right Shift" />
             </MenuItem>
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5"></ColumnDefinition>
+                    <ColumnDefinition Width="200"></ColumnDefinition>
+                    <ColumnDefinition Width="15"></ColumnDefinition>
+                    <ColumnDefinition Width="40"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <local:IntellisenseTextBox Grid.Column="1" x:Name="tbSearchTerm" TaskList="{Binding TaskList}" CaseSensitive="{Binding IntellisenseCaseSensitive, Source={x:Static local:User.Default}}" Height="25" Margin="2,2,2,2" />
+                <Button Grid.Column="3" Grid.ColumnSpan="2" Content="_OK" x:Name="OK" Click="OK_Click" IsDefault="True" Height="25"  Margin="2,2,10,2"   >
+                </Button>
+            </Grid>
+
             <MenuItem Name="UpdateMenu" Header="*Update available*" Visibility="Hidden" Click="GetUpdate" />
         </Menu>
         <local:IntellisenseTextBox Grid.Row="1" Height="23" Margin="0,0,0,0" x:Name="taskText" AcceptsReturn="False" Cursor="IBeam" VerticalAlignment="Top"
