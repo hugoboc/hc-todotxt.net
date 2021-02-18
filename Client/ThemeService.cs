@@ -86,11 +86,19 @@ namespace Client
                 }
                 else if (due_dateMatch.Success)
                 {
-                    textBlock.Inlines.Add(new Run(s) { Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString(User.Default.DateBrushColor)) });
+                    if (s.Equals("due:" + DateTime.Now.ToString("yyyy-MM-dd")))
+                    {
+                        textBlock.Inlines.Add(new Run(s) { Foreground = Brushes.LimeGreen });
+                    }
+                    else
+                    {
+                        textBlock.Inlines.Add(new Run(s) { Foreground = new SolidColorBrush((Color)ColorConverter.ConvertFromString(User.Default.DateBrushColor)) });
+                    }
+                    
                 }
                 else if (mailMatch.Success)
                 {
-                    textBlock.Inlines.Add(new Run(s) { Foreground = Brushes.MediumTurquoise });
+                    textBlock.Inlines.Add(new Run(s) { Foreground = Brushes.Orange });
                 }
                 else if (update_dateMatch.Success)
                 {
