@@ -559,17 +559,20 @@ namespace Client
             SetSelectionOfMenuItem("HiddenTasks", User.Default.ShowHidenTasks);
         }
 
+        private void OnKeyDownHandler(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                ViewModel.ApplySearchFilter(SearchText);
+            }
+        }
+
         public string SearchText
         {
             get { return tbSearchTerm.Text; }
             set { tbSearchTerm.Text = value; tbSearchTerm.CaretIndex = tbSearchTerm.Text.Length; }
         }
 
-
-        public void OK_Click(object sender, RoutedEventArgs e)
-        {
-            ViewModel.ApplySearchFilter(SearchText);
-        }
 
         #endregion
 

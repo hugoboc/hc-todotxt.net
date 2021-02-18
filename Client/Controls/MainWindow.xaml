@@ -382,9 +382,7 @@
                     <ColumnDefinition Width="15"></ColumnDefinition>
                     <ColumnDefinition Width="40"></ColumnDefinition>
                 </Grid.ColumnDefinitions>
-                <local:IntellisenseTextBox Grid.Column="1" x:Name="tbSearchTerm" TaskList="{Binding TaskList}" CaseSensitive="{Binding IntellisenseCaseSensitive, Source={x:Static local:User.Default}}" Height="25" Margin="2,2,2,2" />
-                <Button Grid.Column="3" Grid.ColumnSpan="2" Content="_OK" x:Name="OK" Click="OK_Click" IsDefault="True" Height="25"  Margin="2,2,10,2"   >
-                </Button>
+                <local:IntellisenseTextBox Grid.Column="1" x:Name="tbSearchTerm" TaskList="{Binding TaskList}" CaseSensitive="{Binding IntellisenseCaseSensitive, Source={x:Static local:User.Default}}" Height="25" Margin="2,2,2,2" AcceptsReturn="False" MaxLines="1" KeyDown="OnKeyDownHandler" />
             </Grid>
 
             <MenuItem Name="UpdateMenu" Header="*Update available*" Visibility="Hidden" Click="GetUpdate" />
