@@ -2102,6 +2102,8 @@ namespace Client
                     ?? (someCommand = new ActionCommand(() =>
                     {
                         _window.tbSearchTerm.Focus();
+                        _window.tbSearchTerm.SelectionStart =0;
+                        _window.tbSearchTerm.SelectionLength = _window.tbSearchTerm.Text.Length;
                         //MessageBox.Show("SomeCommand");
                     }));
             }
