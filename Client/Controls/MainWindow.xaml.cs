@@ -563,7 +563,14 @@ namespace Client
         {
             if (e.Key == Key.Enter)
             {
-                ViewModel.ApplySearchFilter(SearchText);
+                if (SearchText == "")
+                {
+                    ViewModel.ApplyFilterPreset0();
+                }
+                else
+                {
+                    ViewModel.ApplySearchFilter(SearchText);
+                }
             }
         }
 
