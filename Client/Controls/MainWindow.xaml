@@ -32,6 +32,7 @@
         <RoutedUICommand x:Key="EmulateDownArrow" Text="Down" />
         <!-- Task menu commands -->
         <RoutedUICommand x:Key="NewTask" Text="New Task" />
+        <RoutedUICommand x:Key="Search" Text="Search" />
         <RoutedUICommand x:Key="NewTaskWithPriority" Text="New Task with Priority" />
         <RoutedUICommand x:Key="UpdateTask" Text="Update Task" />
         <RoutedUICommand x:Key="DeleteTask" Text="Delete Task" />
@@ -411,6 +412,7 @@
                 <KeyBinding Command="{StaticResource EmulateDownArrow}" Key="J" />
                 <!-- Task menu commands -->
                 <KeyBinding Command="{StaticResource NewTask}" Key="N" />
+                <KeyBinding Command="{Binding SomeCommand}" Key="E"/>
                 <KeyBinding Command="{StaticResource NewTaskWithPriority}" Key="D9" Modifiers="Shift" />
                 <KeyBinding Command="{StaticResource PrintFile}" Key="P" />
                 <KeyBinding Command="{StaticResource UpdateTask}" Key="U" />

@@ -1064,6 +1064,12 @@ namespace Client
             _window.taskText.Focus();
         }
 
+        public void Search()
+        {
+            _window.tbSearchTerm.Focus();
+
+        }
+
         public void AddNewTaskWithPriority()
         {
             AddNewTask();
@@ -2087,5 +2093,42 @@ namespace Client
             }
         }
         #endregion
+
+
+        private ICommand someCommand;
+        public ICommand SomeCommand
+        {
+            get
+            {
+                return someCommand
+                    ?? (someCommand = new ActionCommand(() =>
+                    {
+                        _window.tbSearchTerm.Focus();
+                        //MessageBox.Show("SomeCommand");
+                    }));
+            }
+        }
+
+        public class ActionCommand : ICommand
+        {
+            private readonly Action _action;
+
+            public ActionCommand(Action action)
+            {
+                _action = action;
+            }
+
+            public void Execute(object parameter)
+            {
+                _action();
+            }
+
+            public bool CanExecute(object parameter)
+            {
+                return true;
+            }
+
+            public event EventHandler CanExecuteChanged;
+        }
     }
 }

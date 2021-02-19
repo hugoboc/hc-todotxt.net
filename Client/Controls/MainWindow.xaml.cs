@@ -306,6 +306,11 @@ namespace Client
             ViewModel.AddNewTask();
         }
 
+        private void Search(object sender, RoutedEventArgs e)
+        {
+            ViewModel.Search();
+        }
+
         private void NewTaskWithPriorityExecuted(object sender, RoutedEventArgs e)
         {
             ViewModel.AddNewTaskWithPriority();
@@ -400,6 +405,7 @@ namespace Client
         {
             ViewModel.RemoveThresholdDate();
         }
+
 
         #endregion
 
