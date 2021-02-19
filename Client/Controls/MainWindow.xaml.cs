@@ -578,7 +578,13 @@ namespace Client
                     ViewModel.ApplySearchFilter(SearchText);
                 }
             }
+
+            if (e.Key == Key.Escape)
+            {
+                lbTasks.Focus();
+            }
         }
+
 
         public string SearchText
         {
