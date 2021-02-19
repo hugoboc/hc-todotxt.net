@@ -185,11 +185,6 @@
                 </Trigger>
             </ControlTemplate.Triggers>
         </ControlTemplate>
-        <Style TargetType="local:IntellisenseTextBox">
-            <Setter Property="Height" Value="70"/>
-            <Setter Property="TextWrapping" Value="Wrap"/>
-            <Setter Property="AcceptsReturn" Value="True"/>
-        </Style>
     </Window.Resources>
     <Window.CommandBindings>
         <!-- File menu commands -->
@@ -295,6 +290,8 @@
             <RowDefinition Height="*" ></RowDefinition>
             <RowDefinition Height="23"></RowDefinition>
         </Grid.RowDefinitions>
+
+        
         <Menu Grid.Row="0" Height="25" Name="menu1" VerticalAlignment="Top" IsMainMenu="True" KeyboardNavigation.TabNavigation="None" Background="#FF1D2528" Foreground="#A5F2FFFC">
             <MenuItem Header="_File" Template="{DynamicResource MenuTemplate}" Height="25">
                 <MenuItem Header="_New" Command="{StaticResource NewFile}" InputGestureText="Ctrl+N"/>
@@ -375,22 +372,18 @@
                 <MenuItem Header="_Donate" Command="{StaticResource Donate}" />
                 <MenuItem Header="_Show Calendar" Command="{StaticResource ShowCalendar}" InputGestureText="Right Shift" />
             </MenuItem>
-            <Grid HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition Width="5"></ColumnDefinition>
-                    <ColumnDefinition Width="200"></ColumnDefinition>
-                    <ColumnDefinition Width="15"></ColumnDefinition>
-                    <ColumnDefinition Width="40"></ColumnDefinition>
-                </Grid.ColumnDefinitions>
-                <local:IntellisenseTextBox Grid.Column="1" x:Name="tbSearchTerm" TaskList="{Binding TaskList}" CaseSensitive="{Binding IntellisenseCaseSensitive, Source={x:Static local:User.Default}}" Height="25" Margin="2,2,2,2" AcceptsReturn="False" MaxLines="1" KeyDown="OnKeyDownHandler" />
-            </Grid>
-
             <MenuItem Name="UpdateMenu" Header="*Update available*" Visibility="Hidden" Click="GetUpdate" />
-        </Menu>
+            </Menu>
+
+        <local:IntellisenseTextBox x:Name="tbSearchTerm" TaskList="{Binding TaskList}" CaseSensitive="{Binding IntellisenseCaseSensitive, Source={x:Static local:User.Default}}"
+                                   Height="Auto" Margin="290,4,0,4" 
+                                   AcceptsReturn="False" MaxLines="1" KeyDown="OnKeyDownHandler" 
+                                   Background="#FF273136" Foreground="#FFF2FFFC" BorderThickness="1" />
         <local:IntellisenseTextBox Grid.Row="1" Height="23" Margin="0,0,0,0" x:Name="taskText" AcceptsReturn="False" Cursor="IBeam" VerticalAlignment="Top"
                                    KeyUp="taskText_PreviewKeyUp" 
                                    TaskList="{Binding TaskList}"
                                    CaseSensitive="{Binding Source={x:Static local:User.Default}, Path=IntellisenseCaseSensitive}" Background="#FF273136" Foreground="#FFF2FFFC"/>
+        
         <ListBox Grid.Row="2" ItemsSource="{Binding Tasks}" IsSynchronizedWithCurrentItem="True" SelectedItem="{Binding SelectedItem}" Name="lbTasks" Margin="0,10,0,0" SelectedIndex="0" IsTextSearchEnabled="False" AlternationCount="2" BorderBrush="#FF273136" SelectionMode="Extended" Style="{StaticResource WordWrapEnabledListBox}" Background="#FF273136" Foreground="#FFF32410">
             <ListBox.ItemContainerStyle>
                 <Style TargetType="ListBoxItem">
