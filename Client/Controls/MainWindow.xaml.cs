@@ -572,10 +572,12 @@ namespace Client
                 if (SearchText == "")
                 {
                     ViewModel.ApplyFilterPreset0();
+                    lbTasks.Focus();
                 }
                 else
                 {
                     ViewModel.ApplySearchFilter(SearchText);
+                    lbTasks.Focus();
                 }
             }
 
