@@ -168,8 +168,6 @@ namespace Client
         private int tasksOverdue = 0;
 
 
-
-
         public event PropertyChangedEventHandler PropertyChanged;
 
         public MainWindowViewModel(MainWindow window)
