@@ -291,9 +291,13 @@
             <RowDefinition Height="*" ></RowDefinition>
             <RowDefinition Height="23"></RowDefinition>
         </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+            <ColumnDefinition Width="*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
 
         
-        <Menu Grid.Row="0" Height="25" Name="menu1" VerticalAlignment="Top" IsMainMenu="True" KeyboardNavigation.TabNavigation="None" Background="#FF1D2528" Foreground="#A5F2FFFC">
+        <Menu Grid.Row="0" Grid.ColumnSpan="2" Height="25" Name="menu1" VerticalAlignment="Top" IsMainMenu="True" KeyboardNavigation.TabNavigation="None" Background="#FF1D2528" Foreground="#A5F2FFFC">
             <MenuItem Header="_File" Template="{DynamicResource MenuTemplate}" Height="25">
                 <MenuItem Header="_New" Command="{StaticResource NewFile}" InputGestureText="Ctrl+N"/>
                 <MenuItem Header="_Open" Command="{StaticResource OpenFile}" InputGestureText="Ctrl+O"/>
@@ -376,16 +380,34 @@
             <MenuItem Name="UpdateMenu" Header="*Update available*" Visibility="Hidden" Click="GetUpdate" />
             </Menu>
 
-        <local:IntellisenseTextBox x:Name="tbSearchTerm" TaskList="{Binding TaskList}" CaseSensitive="{Binding IntellisenseCaseSensitive, Source={x:Static local:User.Default}}"
-                                   Height="Auto" Margin="290,4,0,4" 
-                                   AcceptsReturn="False" MaxLines="1" KeyDown="OnKeyDownHandler" 
-                                   Background="#FF273136" Foreground="#FFF2FFFC" BorderThickness="1" />
-        <local:IntellisenseTextBox Grid.Row="1" Height="23" Margin="0,0,0,0" x:Name="taskText" AcceptsReturn="False" Cursor="IBeam" VerticalAlignment="Top"
+        <local:IntellisenseTextBox x:Name="tbSearchTerm"
+                                   Height="23"
+                                   Grid.Row="1"
+                                   Grid.Column="1"
+                                   Margin="2,0,0,0" 
+                                   AcceptsReturn="False"
+                                   MaxLines="1"
+                                   KeyDown="OnKeyDownHandler"
+                                   Cursor="IBeam"
+                                   VerticalAlignment="Top"
+                                   Background="#FF273136"
+                                   Foreground="#FFF2FFFC"
+                                   TaskList="{Binding TaskList}"
+                                   CaseSensitive="{Binding IntellisenseCaseSensitive, Source={x:Static local:User.Default}}"/>
+
+        <local:IntellisenseTextBox x:Name="taskText"
+                                   Height="23"
+                                   Grid.Row="1"
+                                   Margin="0,0,2,0"                              
+                                   AcceptsReturn="False"
+                                   MaxLines="1"
                                    KeyUp="taskText_PreviewKeyUp" 
+                                   Cursor="IBeam"
+                                   VerticalAlignment="Top"
                                    TaskList="{Binding TaskList}"
                                    CaseSensitive="{Binding Source={x:Static local:User.Default}, Path=IntellisenseCaseSensitive}" Background="#FF273136" Foreground="#FFF2FFFC"/>
         
-        <ListBox Grid.Row="2" ItemsSource="{Binding Tasks}" IsSynchronizedWithCurrentItem="True" SelectedItem="{Binding SelectedItem}" Name="lbTasks" Margin="0,10,0,0" SelectedIndex="0" IsTextSearchEnabled="False" AlternationCount="2" BorderBrush="#FF273136" SelectionMode="Extended" Style="{StaticResource WordWrapEnabledListBox}" Background="#FF273136" Foreground="#FFF32410">
+        <ListBox Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2" ItemsSource="{Binding Tasks}" IsSynchronizedWithCurrentItem="True" SelectedItem="{Binding SelectedItem}" Name="lbTasks" Margin="0,5,0,0" SelectedIndex="0" IsTextSearchEnabled="False" AlternationCount="2" BorderBrush="#FF273136" SelectionMode="Extended" Style="{StaticResource WordWrapEnabledListBox}" Background="#FF273136" Foreground="#FFF32410">
             <ListBox.ItemContainerStyle>
                 <Style TargetType="ListBoxItem">
                     <!--This remove the border around the listbox-->
@@ -506,7 +528,7 @@
         <Button Grid.Row="0" Grid.RowSpan="2" Content="Print" Height="23" HorizontalAlignment="Left" Margin="0,23,207,0" Name="btnPrint" VerticalAlignment="Top" Width="92" Visibility="Hidden" Click="btnPrint_Click" />
         <Button Grid.Row="0" Grid.RowSpan="2"  Content="Cancel" Height="23" HorizontalAlignment="Left" Margin="97,23,0,0" Name="btnCancelPrint" VerticalAlignment="Top" Width="92" Visibility="Hidden" Click="btnCancelPrint_Click" />
         <!-- Status bar inspired by TodoTxtMac  -->
-        <StatusBar Grid.Row="3" Name="sbTaskSummary" Background="#FF1D2528" Foreground="#A5F2FFFC">
+        <StatusBar Grid.Row="3" Grid.ColumnSpan="2" Name="sbTaskSummary" Background="#FF1D2528" Foreground="#A5F2FFFC">
             <TextBlock Name="lblFilterStatus" Text="{Binding ActiveFilterString, Mode=OneWay, Converter= {StaticResource filterToStatusConv}}" VerticalAlignment="Bottom"></TextBlock>
             <Separator></Separator>
             <TextBlock Text="Sort:"/>
