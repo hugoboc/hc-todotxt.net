@@ -37,6 +37,9 @@ namespace Client
         {
             InitializeComponent();
             this.tbTextToAppend.Focus();
+            this.tbTextToAppend.Text = "-" + " " + DateTime.Now.ToString("dd.MM.yyyy") + " ";
+            this.tbTextToAppend.CaretIndex = this.tbTextToAppend.Text.Length;
+            //MessageBox.Show("Hello");
         }
 
         private void OK_Click(object sender, RoutedEventArgs e)
