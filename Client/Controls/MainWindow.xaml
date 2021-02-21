@@ -494,7 +494,8 @@
                     <StackPanel>
                         <TextBlock local:ThemeService.Text="{Binding Raw}" Style="{StaticResource WordWrapEnabledTextBlock}">
                             <TextBlock.InputBindings>
-                                <MouseBinding Gesture="LeftDoubleClick" Command="{StaticResource UpdateTask}" />
+                                <MouseBinding Gesture="LeftDoubleClick" Command="{StaticResource AppendText}" />
+                                <MouseBinding Gesture="RightDoubleClick" Command="{StaticResource UpdateTask}" />
                             </TextBlock.InputBindings>
                         </TextBlock>
                     </StackPanel >
