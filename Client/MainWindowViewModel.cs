@@ -1062,12 +1062,6 @@ namespace Client
             _window.taskText.Focus();
         }
 
-        public void Search()
-        {
-            _window.tbSearchTerm.Focus();
-
-        }
-
         public void AddNewTaskWithPriority()
         {
             AddNewTask();
