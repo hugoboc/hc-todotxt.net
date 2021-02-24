@@ -17,6 +17,13 @@
         DataContext="{Binding}" 
         StateChanged="Window_StateChanged">
     <Window.Resources>
+
+        <Style TargetType="ScrollBar">
+            <Setter Property="Background" Value="#FF273136"/>
+            <Setter Property="BorderBrush" Value="#FF273136"/>
+            <Setter Property="Width" Value="5"/>
+        </Style>
+
         <!-- File menu commands -->
         <RoutedUICommand x:Key="OpenFile" Text="Open File" />
         <RoutedUICommand x:Key="NewFile" Text="New File" />
