@@ -49,6 +49,7 @@ namespace Client
                 Match created_dateMatch = new Regex(@"(?<date>(\d{4})-(\d{2})-(\d{2}))").Match(s);
                 Match due_dateMatch = new Regex(@"due:(?<date>(\d{4})-(\d{2})-(\d{2}))").Match(s);
                 Match mailMatch = new Regex(@"(E2T)(?!.*E2T)\S+").Match(s);
+                Match quoteMatch = new Regex(@"(QT)(?!.*QT)\S+").Match(s);
                 Match update_dateMatch = new Regex(@"(?<date>(\d{2})\D(\d{2})\D(\d{4}))").Match(s);
 
 
@@ -97,6 +98,10 @@ namespace Client
                     
                 }
                 else if (mailMatch.Success)
+                {
+                    textBlock.Inlines.Add(new Run(s) { Foreground = Brushes.Orange });
+                }
+                else if (quoteMatch.Success)
                 {
                     textBlock.Inlines.Add(new Run(s) { Foreground = Brushes.Orange });
                 }
